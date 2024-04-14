@@ -17,19 +17,30 @@ ingress:
     host: ''
     tlsSecretName: ''
 
-payment:
+userdb:
     image:
-        repo: kumararj/sock-shop-micro-services-payment
-        tag: 0.4.3
-    declinePaymentsOverAmount: 200
-    containerPort: 8080
+        repo: weaveworksdemos/user-db
+        tag: 0.4.0
     resources:
         limits:
-            cpu: 100m
-            memory: 100Mi
+            cpu: 300m
+            memory: 1000Mi
         requests:
             cpu: 100m
-            memory: 100Mi
+            memory: 300Mi
+
+user:
+    image:
+        repo: weaveworksdemos/user
+        tag: 0.4.7
+    containerPort: 80
+    resources:
+        limits:
+            cpu: 300m
+            memory: 1000Mi
+        requests:
+            cpu: 100m
+            memory: 400Mi
 
 zipkin:
     image:
