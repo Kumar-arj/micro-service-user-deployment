@@ -19,8 +19,8 @@ ingress:
 
 userdb:
     image:
-        repo: weaveworksdemos/user-db
-        tag: 0.4.0
+        repo: kumararj/sock-shop-micro-services-user-db
+        tag: latest
     resources:
         limits:
             cpu: 300m
@@ -31,9 +31,9 @@ userdb:
 
 user:
     image:
-        repo: weaveworksdemos/user
-        tag: 0.4.7
-    containerPort: 80
+        repo: kumararj/sock-shop-micro-services-user
+        tag: latest
+    containerPort: 8080
     resources:
         limits:
             cpu: 300m
