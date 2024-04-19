@@ -28,7 +28,7 @@ def label = "shopagent"
                     sh '/usr/local/bin/helm repo add sock-shop-helm-local http://nexus.k4m.in/repository/sock-shop-helm-local/ --username $username --password $password'
                     sh "/usr/local/bin/helm repo update"
                     sh "/usr/local/bin/helm upgrade  --install --force micro-services-user  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-user"
-                    sh "/usr/local/bin/helm upgrade  --install --force micro-services-user-db  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-user-db"
+                    // sh "/usr/local/bin/helm upgrade  --install --force micro-services-user-db  --namespace ${env} -f values.yaml sock-shop-helm-local/micro-services-user-db"
                     sh "/usr/local/bin/helm list -a --namespace ${env}"
                     sh "rm -rf values.yaml"
                       
